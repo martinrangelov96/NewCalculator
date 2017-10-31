@@ -13,7 +13,7 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ICalculations {
 
     private EditText mEditText;
     private Button mClearButton;
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
     public void numberClicked(View view) {
         String oldText = mEditText.getText().toString();
         if (oldText.startsWith("0") && !oldText.contains(".")) {
@@ -41,27 +42,26 @@ public class MainActivity extends AppCompatActivity {
         }
         if (mEditText.getText().equals(0)) {
             mClearButton.setText("AC");
-        }
-        else {
+        } else {
             mClearButton.setText("C");
         }
-        mEditText.setText(oldText + ((Button)view).getText());
+        mEditText.setText(oldText + ((Button) view).getText());
     }
 
+    @Override
     public void percentClicked(View view) {
-
         try {
             currentNumber = Double.parseDouble(mEditText.getText().toString());
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
-        mEditText.setText(dfPercent.format(currentNumber/100));
+        mEditText.setText(dfPercent.format(currentNumber / 100));
     }
 
+    @Override
     public void operationClicked(View view) {
-
         try {
-            this.operation = ((Button)(view)).getText().charAt(0);
+            this.operation = ((Button) (view)).getText().charAt(0);
             this.number = Double.parseDouble(mEditText.getText().toString());
         } catch (Exception e) {
             e.printStackTrace();
@@ -69,11 +69,11 @@ public class MainActivity extends AppCompatActivity {
         mEditText.setText(String.valueOf(operation));
     }
 
+    @Override
     public void equalsClick(View view) {
-
         try {
             String strNumber = mEditText.getText().toString();
-            if (strNumber.contains(String.valueOf(operation))){
+            if (strNumber.contains(String.valueOf(operation))) {
                 strNumber = strNumber.substring(1);
             }
             currentNumber = Double.parseDouble(String.valueOf(strNumber));
@@ -107,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
     public void clearResult(View view) {
         this.number = 0;
         this.result = 0;
@@ -114,23 +115,22 @@ public class MainActivity extends AppCompatActivity {
         mClearButton.setText("AC");
     }
 
+    @Override
     public void plusMinusClicked(View view) {
-
         try {
-            mEditText.setText(""+Double.parseDouble(mEditText.getText().toString()) * (-1));
+            mEditText.setText("" + Double.parseDouble(mEditText.getText().toString()) * (-1));
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
     }
 
+    @Override
     public void pointClicked(View view) {
         String oldText = mEditText.getText().toString();
-        if (oldText.contains(".")){
+        if (oldText.contains(".")) {
             mEditText.setText(mEditText.getText().toString());
-        }
-        else {
-            mEditText.setText(oldText+".");
+        } else {
+            mEditText.setText(oldText + ".");
         }
     }
-
 }

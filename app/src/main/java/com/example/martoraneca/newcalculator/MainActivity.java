@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements ICalculations {
 
     }
 
+    //clicking 0,1,2...9
     @Override
     public void numberClicked(View view) {
         String oldText = mEditText.getText().toString();
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements ICalculations {
         mEditText.setText(oldText + ((Button) view).getText());
     }
 
+    //clicking %
     @Override
     public void percentClicked(View view) {
         try {
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements ICalculations {
         mEditText.setText(dfPercent.format(currentNumber / 100));
     }
 
+    //clicking +, -, * or /
     @Override
     public void operationClicked(View view) {
         try {
@@ -69,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements ICalculations {
         mEditText.setText(String.valueOf(operation));
     }
 
+    //clicking =
     @Override
     public void equalsClick(View view) {
         try {
@@ -107,6 +111,7 @@ public class MainActivity extends AppCompatActivity implements ICalculations {
         }
     }
 
+    //clicking C or AC
     @Override
     public void clearResult(View view) {
         this.number = 0;
@@ -115,6 +120,7 @@ public class MainActivity extends AppCompatActivity implements ICalculations {
         mClearButton.setText("AC");
     }
 
+    //clicking the +/- button
     @Override
     public void plusMinusClicked(View view) {
         try {
@@ -124,6 +130,7 @@ public class MainActivity extends AppCompatActivity implements ICalculations {
         }
     }
 
+    //clicking '.' for double numbers
     @Override
     public void pointClicked(View view) {
         String oldText = mEditText.getText().toString();

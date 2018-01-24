@@ -6,7 +6,7 @@ move local.properties to D:\reactnative\project\android
 react-native run-android
 npm install --save-dev eslint-config rallycoding
 npm install eslint-config-rallycoding@3.2.0
-.eslintrc
+create file .eslintrc
 {
   "extends": "rallycoding"
 }

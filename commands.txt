@@ -21,3 +21,5 @@ get files from the project and paste them into the clone
 git add .
 git commit -m "comment"
 git push
+
+git status (check if there's any change)

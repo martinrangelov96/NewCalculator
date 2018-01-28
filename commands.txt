@@ -23,3 +23,8 @@ git commit -m "comment"
 git push
 
 git status (check if there's any change)
+
+HOW TO RETURN TO YOUR LAST COMMIT
+git log -2 (see last 2 commits)
+git reset --hard
+git status (check if it's successful)

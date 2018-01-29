@@ -28,3 +28,10 @@ HOW TO RETURN TO YOUR LAST COMMIT
 git log -2 (see last 2 commits)
 git reset --hard
 git status (check if it's successful)
+
+---React-Native---
+-Disable Drawer Navigation on some pages
+
+navigationOptions: {
+  drawerLockMode: 'locked-closed'
+}

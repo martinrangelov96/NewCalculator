@@ -18,6 +18,7 @@ create project and get a the link
 cd Desktop
 git clone *link from bitbucket project*
 get files from the project and paste them into the clone
+
 git add .
 git commit -m "comment"
 git push

@@ -37,9 +37,10 @@ navigationOptions: {
   drawerLockMode: 'locked-closed'
 }
 
----Създаваме нов проект с името на проекта, като след това направи архитектурата на проекта---
+-------------------Създаваме нов проект с името на проекта, като след това направи архитектурата на проекта-------------------------
 
-create an empty desktop folder
+create an empty folder in your drive
+oepn in terminal
 git clone *bitbucket link*
 create a .gitignore. folder and paste:
 
@@ -99,4 +100,36 @@ fastlane/screenshots
 
 .vscode
 
----
+--------------------------------------create README.md----------------------------------------
+
+# Insert App Name Here
+
+Insert App Description Here
+
+### Installing
+
+You will need Node, Watchman, the React Native command line interface, and Xcode.
+We recommend installing Node and Watchman using Homebrew.
+
+```
+brew install node
+brew install watchman
+```
+
+```
+npm install -g react-native-cli
+```
+
+```
+npm install
+react-native run-ios - For iOS
+react-native run-android - For Android
+```
+
+### Version Code
+
+react-native-cli: 2.0.1
+react-native: 0.52.1
+npm: 5.6.0
+
+---------------------
